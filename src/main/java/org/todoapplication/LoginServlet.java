@@ -31,9 +31,30 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
+    private UserValidationService service = new UserValidationService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //request.setAttribute("name", request.getParameter("name"));
+       // request.setAttribute("password", request.getParameter("password"));
         request.getRequestDispatcher("/WEB_INF/views/login.jsp").forward(request,response);
+        //System.out.println(request.getParameter("name"));
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("Name");
+        String password = request.getParameter("password");
+
+        if(service.isUserValid(name,password)){
+            request.setAttribute("name", name);
+           // request.setAttribute("password", password);
+            request.getRequestDispatcher("/WEB_INF/views/welcome.jsp").forward(request,response);
+        }else{
+            request.setAttribute("errorMsg", "Invalid User!!  pls try again");
+            request.getRequestDispatcher("/WEB_INF/views/login.jsp").forward(request,response);
+        }
+        //System.out.println(request.getParameter("Name"));
 
     }
 
