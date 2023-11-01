@@ -1,6 +1,6 @@
 package org.todoapplication;
 
-public class UserValidationService {
+public class LoginService {
 
     public boolean isUserValid(String user, String password) {
         if(user.equals("Shivam") && password.equals("LOL"))
