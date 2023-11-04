@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-${pageContext}
+Hello Test
 </body>
 </html>
