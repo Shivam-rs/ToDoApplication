@@ -1,4 +1,4 @@
-package org.todoapplication;
+package org.todoapplication.jee;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //request.setAttribute("name", request.getParameter("name"));
        // request.setAttribute("password", request.getParameter("password"));
-        request.getRequestDispatcher("/WEB_INF/views/login.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request,response);
         //System.out.println(request.getParameter("name"));
 
     }
@@ -49,10 +49,10 @@ public class LoginServlet extends HttpServlet {
         if(service.isUserValid(name,password)){
             request.setAttribute("name", name);
            // request.setAttribute("password", password);
-            request.getRequestDispatcher("/WEB_INF/views/welcome.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request,response);
         }else{
             request.setAttribute("errorMsg", "Invalid User!!  pls try again");
-            request.getRequestDispatcher("/WEB_INF/views/login.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request,response);
         }
         //System.out.println(request.getParameter("Name"));
 

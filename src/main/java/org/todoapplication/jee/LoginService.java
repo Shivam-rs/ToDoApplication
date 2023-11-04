@@ -1,4 +1,4 @@
-package org.todoapplication;
+package org.todoapplication.jee;
 
 public class LoginService {
 
