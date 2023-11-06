@@ -11,6 +11,7 @@
     <title>Welcome</title>
 </head>
 <body>
+<form action ="/login" method="post">
 Welcome ${name}
 </body>
 </html>

@@ -1,11 +1,10 @@
 <html>
 <head>
-    <title>Shivam Jee</title>
+    <title>Spring MVC</title>
 </head>
 <body>
-<p> <font color="red"> ${errorMsg} </font></p>
-<form action="/login.do" method="post">
-   Enter User Name <input type="text" name="Name"/>
+<form action="/spring-mvc/login" method="post">
+   Enter User Name <input type="text" name="name"/>
    Password  <input type="password" name="password"/>
     <input type="submit" value="Login"/>
 </form>
