@@ -11,7 +11,9 @@
     <title>Welcome</title>
 </head>
 <body>
-<form action ="/spring-mvc/login" method="get">
-Welcome ${userID}
+<form action ="/login" method="get">
+Welcome ${userID} <BR/>
+<BR/>
+ Now you can check your todos from <a href="list-todos"> here
 </body>
 </html>

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ToDoService {
     private static List<ToDo> toDos = new ArrayList<ToDo>();
@@ -24,12 +26,11 @@ public class ToDoService {
         toDos.removeIf(toDo -> toDo.getId() == id);
     }
 
-    public ToDo retrieveToDo(String name){
-        ToDo filterToDos = new ToDo();
+    public List<ToDo> retrieveToDo(String name){
+        List<ToDo> filterToDos = new ArrayList<ToDo>();
         filterToDos = toDos.stream()
-                .filter(f -> name.equals(f.getUser()))
-                .findAny()
-                .orElse(null);
+                .filter(user -> name.equals(user.getUser()))
+                .collect(Collectors.toList());
 
         return filterToDos;
     }

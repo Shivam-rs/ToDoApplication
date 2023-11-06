@@ -1,3 +1,4 @@
+/*
 package org.webapplication.jee;
 
 import javax.servlet.ServletException;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+*/
 /*
  * Browser sends Http Request to Web Server
  *
@@ -14,7 +16,8 @@ import java.io.IOException;
  * JEE with Servlets
  *
  * Web Server responds with Http Response
- */
+ *//*
+
 
 //Java Platform, Enterprise Edition (Java EE) JEE6
 
@@ -59,3 +62,4 @@ public class LoginServlet extends HttpServlet {
     }
 
 }
+*/
