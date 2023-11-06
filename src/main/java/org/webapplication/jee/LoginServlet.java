@@ -1,4 +1,4 @@
-package org.todoapplication.jee;
+package org.webapplication.jee;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package org.todoapplication.jee;
+package org.webapplication.jee;
 
 import org.springframework.stereotype.Component;
 
