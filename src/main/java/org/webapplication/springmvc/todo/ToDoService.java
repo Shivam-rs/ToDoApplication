@@ -1,9 +1,11 @@
 package org.webapplication.springmvc.todo;
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Service
 public class ToDoService {
     private static List<ToDo> toDos = new ArrayList<ToDo>();
     private static int toDoCount =3;
