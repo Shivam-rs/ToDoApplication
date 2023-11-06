@@ -11,7 +11,7 @@
     <title>Welcome</title>
 </head>
 <body>
-<form action ="/login" method="post">
-Welcome ${name}
+<form action ="/spring-mvc/login" method="get">
+Welcome ${userID}
 </body>
 </html>
