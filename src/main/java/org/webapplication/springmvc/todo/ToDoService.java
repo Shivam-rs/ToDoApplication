@@ -9,13 +9,13 @@ import java.util.stream.Collectors;
 
 @Service
 public class ToDoService {
-    private static List<ToDo> toDos = new ArrayList<>();
+    private static List<ToDo> toDos = new ArrayList<ToDo>();
     private static int toDoCount =3;
 
     static {
         toDos.add(new ToDo(1,"Shivam","Learn Spring MVC", new Date(),false));
         toDos.add(new ToDo(2,"Shivam","Learn Struts", new Date(),false));
-        toDos.add(new ToDo(3,"Shivam","Learn Hibernate", new Date(),false));
+        toDos.add(new ToDo(1,"Shivam","Learn Hibernate", new Date(),false));
     }
 
     public void addToDo(String name, String desc, Date targetDate, boolean isDone){
