@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Spring MVC</title>
+    <title>Spring MVC Project</title>
 </head>
 <body>
 <p style="color: red"> ${errorMessage}</p>
