@@ -11,7 +11,7 @@
     <title>ToDo's</title>
 </head>
 <body>
-Hi ${userID}, your ToDo's are as follows <BR/>
+Your ToDo's are as follows
 ${toDos}
 </body>
 </html>
