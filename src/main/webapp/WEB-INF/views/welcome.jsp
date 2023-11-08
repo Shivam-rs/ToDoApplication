@@ -7,13 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Welcome</title>
-</head>
-<body>
-<form action ="/login" method="get">
-    Welcome ${userID} <BR/>
-    <BR/>
-    Now you can check your todos from <a href="/list-todos"> here </a>
-</body>
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+    <form action ="/login" method="get">
+        Welcome ${userID} <BR/>
+        <BR/>
+        Now you can check your todos from <a href="/list-todos"> here </a>
+    </body>
 </html>>
