@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -31,7 +32,8 @@
                         <tr>
                             <td>${todo.id}</td>
                             <td>${todo.desc}</td>
-                            <td>${todo.targetDate}</td>
+
+                            <td> <fmt:formatDate pattern="MM/dd/yyyy" value="${todo.targetDate}"/></td>
                             <td>${todo.done}</td>
                             <td>
                                 <a class="btn btn-info" href="update-todo?id=${todo.id}">Update</a>

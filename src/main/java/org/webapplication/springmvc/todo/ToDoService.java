@@ -55,7 +55,10 @@ public class ToDoService {
     }*/
 
     public void update(ToDo toDo){
+        ToDo updateToDo = new ToDo(toDo.getId(),toDo.getUser(),toDo.getDesc(), toDo.getTargetDate(),false);
         toDos.remove(toDo);
-        toDos.add(toDo);
+        toDos.add(updateToDo);
+
+        //System.out.println(toDos);
     }
 }

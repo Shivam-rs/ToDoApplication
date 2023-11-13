@@ -1,15 +1,15 @@
 package org.webapplication.springmvc.todo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
@@ -17,6 +17,13 @@ import java.util.Date;
 public class ToDoController {
     @Autowired
     private ToDoService service;
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(
+                dateFormat, false));
+    }
 
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String listToDo( ModelMap model)
@@ -39,7 +46,7 @@ public class ToDoController {
             return "todo";
         }
         model.clear();
-        service.addToDo("Shivam",toDo.getDesc(), new Date(), false);
+        service.addToDo("Shivam",toDo.getDesc(), toDo.getTargetDate(), false);
         return "redirect: list-todos";
     }
 
@@ -56,8 +63,6 @@ public class ToDoController {
     public String showUpdateToDo(ModelMap model, @RequestParam int id)
     {
         model.clear();
-        //Optional<ToDo> toDo = service.retrieveToDos(id);
-        //System.out.print(toDo);
         model.addAttribute("toDo",service.retrieveToDos(id));
         return "todo";
     }
