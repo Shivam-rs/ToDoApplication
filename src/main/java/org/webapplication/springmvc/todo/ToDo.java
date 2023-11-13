@@ -1,11 +1,13 @@
 package org.webapplication.springmvc.todo;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class ToDo {
 
     private int id;
     private String user;
+    @Size(min = 6, message = "Enter at least 6 Char")
     private String desc;
     private Date targetDate;
     private Boolean isDone;

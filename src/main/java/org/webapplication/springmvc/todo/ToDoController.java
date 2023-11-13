@@ -3,18 +3,20 @@ package org.webapplication.springmvc.todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import javax.validation.Valid;
 import java.util.Date;
 
 @Controller
 @SessionAttributes("userID")
 public class ToDoController {
     @Autowired
-    ToDoService service;
+    private ToDoService service;
 
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String listToDo( ModelMap model)
@@ -24,17 +26,20 @@ public class ToDoController {
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
-    public String showToDo()
+    public String showToDo(ModelMap model)
     {
+        model.addAttribute("toDo", new ToDo());
         return "todo";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.POST)
-    public String addToDo(ModelMap model, @RequestParam String desc)
+    public String addToDo(ModelMap model, @Valid ToDo toDo, BindingResult result)
     {
+        if(result.hasErrors()){
+            return "todo";
+        }
         model.clear();
-        // model.addAttribute("toDos",service.retrieveToDo("Shivam"));
-        service.addToDo("Shivam",desc, new Date(), false);
+        service.addToDo("Shivam",toDo.getDesc(), new Date(), false);
         return "redirect: list-todos";
     }
 

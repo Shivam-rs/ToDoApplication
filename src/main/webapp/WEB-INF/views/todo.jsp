@@ -5,6 +5,7 @@
   Time: 8:20 AM
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -14,12 +15,14 @@
     </head>
     <body>
         <div class="container">
-            <form action="/add-todo" method="post">
+            <form:form action="/add-todo" method="post" commandName="toDo">
                 <fieldset class="form-group">
-                    <label>Enter Description of ToDo </label> <input type="text" name="desc" class="form-control" required="required"/>
+                    <form:label path="desc">Enter Description of ToDo </form:label>
+                    <form:input path="desc" type="text" class="form-control" required="required" />
+                    <form:errors path="desc" cssClass="text-warning" />
                 </fieldset>
                 <input type="submit" value="Add" class="btn btn-success"/>
-            </form>
+            </form:form>
         </div>
         <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
