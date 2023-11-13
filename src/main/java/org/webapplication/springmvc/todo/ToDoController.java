@@ -21,12 +21,12 @@ public class ToDoController {
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String listToDo( ModelMap model)
     {
-        model.addAttribute("toDos",service.retrieveToDo("Shivam"));
+        model.addAttribute("toDos",service.retrieveToDos("Shivam"));
         return "list-todos";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
-    public String showToDo(ModelMap model)
+    public String showAddToDo(ModelMap model)
     {
         model.addAttribute("toDo", new ToDo());
         return "todo";
@@ -52,4 +52,25 @@ public class ToDoController {
         return "redirect: list-todos";
     }
 
+    @RequestMapping(value = "/update-todo", method = RequestMethod.GET)
+    public String showUpdateToDo(ModelMap model, @RequestParam int id)
+    {
+        model.clear();
+        //Optional<ToDo> toDo = service.retrieveToDos(id);
+        //System.out.print(toDo);
+        model.addAttribute("toDo",service.retrieveToDos(id));
+        return "todo";
+    }
+
+    @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
+    public String updateToDo(ModelMap model, @Valid ToDo toDo, BindingResult result)
+    {
+        if(result.hasErrors()){
+            return "todo";
+        }
+        toDo.setUser("Shivam");
+        service.update(toDo);
+        model.clear();
+        return "redirect: list-todos";
+    }
 }

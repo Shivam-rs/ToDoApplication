@@ -15,13 +15,13 @@
     </head>
     <body>
         <div class="container">
-            <form:form action="/add-todo" method="post" commandName="toDo">
+            <form:form method="post" commandName="toDo">
                 <fieldset class="form-group">
                     <form:label path="desc">Enter Description of ToDo </form:label>
                     <form:input path="desc" type="text" class="form-control" required="required" />
                     <form:errors path="desc" cssClass="text-warning" />
                 </fieldset>
-                <input type="submit" value="Add" class="btn btn-success"/>
+                <input type="submit" value="Submit" class="btn btn-success"/>
             </form:form>
         </div>
         <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
