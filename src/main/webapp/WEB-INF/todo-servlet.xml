@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringXmlModelInspection -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -7,13 +8,16 @@
 	    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="org.webapplication" />
+    <context:component-scan base-package="org.webapplication.springmvc" />
+    <!--
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="prefix" value="/WEB-INF/views"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    -->
     <mvc:resources mapping="/webjars/**" location="/webjars/"/>
+   <!-- <mvc:default-servlet-handler/>-->
     <mvc:annotation-driven />
 
 </beans>

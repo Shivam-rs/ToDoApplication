@@ -8,7 +8,6 @@
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
         <title>Add A ToDo</title>
-    </head>
     <body>
         <div class="container">
             <form:form method="post" commandName="toDo">

@@ -1,3 +1,4 @@
+/*
 package org.webapplication.jee;
 
 import org.springframework.stereotype.Service;
@@ -9,3 +10,4 @@ public class LoginService {
         return user.equals("Shivam") && password.equals("LOL");
     }
 }
+*/

@@ -28,8 +28,12 @@ public class ToDoController {
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String listToDo( ModelMap model)
     {
-        model.addAttribute("toDos",service.retrieveToDos("Shivam"));
+        model.addAttribute("toDos",service.retrieveToDos(retrieveLoggedinUserName()));
         return "list-todos";
+    }
+
+    private String retrieveLoggedinUserName() {
+        return "Shivam";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
@@ -46,7 +50,7 @@ public class ToDoController {
             return "todo";
         }
         model.clear();
-        service.addToDo("Shivam",toDo.getDesc(), toDo.getTargetDate(), false);
+        service.addToDo(retrieveLoggedinUserName(),toDo.getDesc(), toDo.getTargetDate(), false);
         return "redirect: list-todos";
     }
 
@@ -73,7 +77,7 @@ public class ToDoController {
         if(result.hasErrors()){
             return "todo";
         }
-        toDo.setUser("Shivam");
+        toDo.setUser(retrieveLoggedinUserName());
         service.update(toDo);
         model.clear();
         return "redirect: list-todos";

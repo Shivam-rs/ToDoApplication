@@ -9,9 +9,8 @@
         <%@ include file="common/header.jspf"%>
         <%@ include file="common/navigation.jspf"%>
         <title>ToDo's for ${userID}</title>
-    </head>
-    <body>
 
+    <body>
         <div class="container">
             <table class="table table-striped table-bordered">
                 <caption>${userID}, your To-Do's are</caption>
@@ -43,7 +42,6 @@
             <div>
                 <a class="btn btn-success" href="/add-todo"> Add </a>
             </div>
-
         </div>
 
         <%@ include file="common/footer.jspf"%>

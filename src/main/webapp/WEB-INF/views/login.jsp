@@ -1,3 +1,4 @@
+<%--
 <%@ include file="common/header.jspf"%>
         <title>Spring MVC Project</title>
     </head>
@@ -17,4 +18,4 @@
                 <input type="submit" value="Login" class="btn btn-success"/>
             </form>
         </div>
-<%@ include file="common/footer.jspf"%>
+<%@ include file="common/footer.jspf"%>--%>
