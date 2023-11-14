@@ -11,7 +11,7 @@
 <title>Welcome</title>
             <body>
                 <div class="container">
-                    <form action ="/login" method="get">
+                    <form method="get">
                         Welcome ${userID} <BR/>
                         <BR/>
                         Now you can check your todos from <a href="/list-todos"/> here

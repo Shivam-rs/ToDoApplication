@@ -12,12 +12,11 @@ public class LoginController {
 /*    @Autowired
     LoginService service;*/
 
-    @RequestMapping(value = "/1", method = RequestMethod.GET )
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET )
     //@ResponseBody
     public String login(ModelMap model){
         model.put("userID","Shivam");
         return "welcome";
-       //return "LOL";
     }
 
 /*    @RequestMapping(value = "/login", method = RequestMethod.POST )
