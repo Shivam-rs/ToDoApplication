@@ -48,6 +48,7 @@ public class ToDoController {
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
     public String showAddToDo(ModelMap model)
     {
+       /* throw new RuntimeException("Dummy Exception");*/
         model.addAttribute("toDo", new ToDo());
         return "todo";
     }

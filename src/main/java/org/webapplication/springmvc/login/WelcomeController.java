@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("userID")
-public class LoginController {
+public class WelcomeController {
 /*    @Autowired
     LoginService service;*/
 
