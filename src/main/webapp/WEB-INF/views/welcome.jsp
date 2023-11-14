@@ -14,6 +14,6 @@
     <form action ="/login" method="get">
         Welcome ${userID} <BR/>
         <BR/>
-        Now you can check your todos from <a href="/list-todos"> here </a>
+        Now you can check your todos from <a href="/list-todos"/> here
     </body>
 </html>>

@@ -1,7 +1,4 @@
-<html>
-    <head>
-        <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-              rel="stylesheet">
+<%@ include file="common/header.jspf"%>
         <title>Spring MVC Project</title>
     </head>
     <body>
@@ -20,7 +17,4 @@
                 <input type="submit" value="Login" class="btn btn-success"/>
             </form>
         </div>
-        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-    </body>
-</html>
+<%@ include file="common/footer.jspf"%>

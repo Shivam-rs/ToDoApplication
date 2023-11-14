@@ -5,16 +5,13 @@
   Time: 10:17 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-    <head>
-        <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-              rel="stylesheet">
+
+        <%@ include file="common/header.jspf"%>
+        <%@ include file="common/navigation.jspf"%>
         <title>ToDo's for ${userID}</title>
     </head>
     <body>
+
         <div class="container">
             <table class="table table-striped table-bordered">
                 <caption>${userID}, your To-Do's are</caption>
@@ -48,7 +45,6 @@
             </div>
 
         </div>
-        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-    </body>
-</html>
+
+        <%@ include file="common/footer.jspf"%>
+
