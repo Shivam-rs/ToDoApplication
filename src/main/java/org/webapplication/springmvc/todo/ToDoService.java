@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,29 +35,25 @@ public class ToDoService {
         return filterToDos;
     }
 
-    public Optional<ToDo> retrieveToDos(int id){
-        Optional<ToDo> filterToDo;
-        filterToDo = toDos.stream()
+    public ToDo retrieveToDos(int id){
+        List<ToDo> lol = new ArrayList<ToDo>();
+        ToDo a = new ToDo();
+       lol = toDos.stream()
                 .filter(user -> id == user.getId())
-                .findFirst();
-                //.collect(Collectors.class);
+                .collect(Collectors.toList());
+        return lol.get(0);
 
-        return filterToDo;
     }
 
-/*    public ToDo retrieveToDos(int id) {
-        for (ToDo toDo : toDos) {
-            if (toDo.getId() == id)
-                return toDo;
-        }
-        return null;
-    }*/
-
     public void update(ToDo toDo){
-        ToDo updateToDo = new ToDo(toDo.getId(),toDo.getUser(),toDo.getDesc(), toDo.getTargetDate(),false);
+        ToDo updatedTodo = retrieveToDos(toDo.getId());
+        updatedTodo.setUser(toDo.getUser());
+        updatedTodo.setDesc(toDo.getDesc());
+        updatedTodo.setTargetDate(toDo.getTargetDate());
+        updatedTodo.setDone(toDo.getDone());
+        /*ToDo updateToDo = new ToDo(toDo.getId(),toDo.getUser(),toDo.getDesc(), toDo.getTargetDate(),toDo.getDone());
         toDos.remove(toDo);
-        toDos.add(updateToDo);
+        toDos.add(updateToDo);*/
 
-        //System.out.println(toDos);
     }
 }

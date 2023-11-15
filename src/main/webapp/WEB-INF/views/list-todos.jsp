@@ -26,6 +26,7 @@
                 <tbody>
                     <c:forEach items="${toDos}" var="todo">
                         <tr>
+                           <%-- <td><fmt:formatNumber</td>--%>
                             <td>${todo.id}</td>
                             <td>${todo.desc}</td>
 

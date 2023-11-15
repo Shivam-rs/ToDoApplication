@@ -22,6 +22,11 @@
                     <form:input path="targetDate" type="text" class="form-control" required="required" />
                     <form:errors path="targetDate" cssClass="text-warning" />
                 </fieldset>
+                <fieldset class="form-group">
+                    <form:label path="done">Is This ToDO Done? </form:label>
+                    <form:input path="done" type="text" class="form-control" required="required" />
+                    <form:errors path="done" cssClass="text-warning" />
+                </fieldset>
                 <input type="submit" value="Submit" class="btn btn-success"/>
             </form:form>
         </div>
